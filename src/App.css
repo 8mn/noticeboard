@@ -1,38 +1,33 @@
-.App {
-  text-align: center;
+
+*{
+  margin: 0;
+  padding: 0;
+}
+*,
+*:before,
+*::after{
+  box-sizing:inherit;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html{
+  box-sizing:border-box;
+  font-size:62.5%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+:root{
+  --coolGray900:#111827;
+  --coolGray800:#1F2937;
+  --coolGray700:#374151;
+  --coolGray600:#4B5563;
+  --coolGray500:#6B7280;
+  --coolGray400:#9CA3AF;
+  --coolGray300:#D1D5DB;
+  --coolGray200:#E5E7EB;
+  --coolGray100:#F3F4F6;
+  --coolGray50:#F9FAFB;
+  --accent:#FF4500;
+  --twitterBlue:hsl(203, 89%, 53%);
+  /* --githubGreen:#238C3C */
+  --githubGreen:hsl(137, 55%, 41%);
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }

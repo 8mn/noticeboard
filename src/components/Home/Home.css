@@ -1,0 +1,107 @@
+
+*{
+  margin: 0;
+  padding: 0;
+}
+*,
+*:before,
+*::after{
+  box-sizing:inherit;
+}
+
+html{
+  box-sizing:border-box;
+  font-size:62.5%;
+}
+
+:root{
+  --coolGray900:#111827;
+  --coolGray800:#1F2937;
+  --coolGray700:#374151;
+  --coolGray600:#4B5563;
+  --coolGray500:#6B7280;
+  --coolGray400:#9CA3AF;
+  --coolGray300:#D1D5DB;
+  --coolGray200:#E5E7EB;
+  --coolGray100:#F3F4F6;
+  --coolGray50:#F9FAFB;
+  --accent:#FF4500;
+  --twitterBlue:hsl(203, 89%, 53%);
+  /* --githubGreen:#238C3C */
+  --githubGreen:hsl(137, 55%, 41%);
+
+}
+
+.App{
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  display: flex;
+}
+
+.nav{
+  background-color: #111827;
+  width: 100%;
+  color: #F9FAFB;
+  font-size: 3rem;
+  padding: 1rem 2rem;
+}
+
+.logo{
+  font-family: "Verdana", Geneva, Tahoma, sans-serif;
+}
+
+.nav ul{
+
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+}
+
+.org{
+  font-size: 2.5rem;
+  margin: 1rem 0;
+  /* text-decoration: underline; */
+  border: 1px solid black;
+  width: 40vw;
+  text-align: center;
+  border-radius: 4px;
+}
+
+.noticeBoard{
+  height: 100vh;
+  width: 40vw;
+  margin: auto;
+  border: 2px solid black;
+}
+
+.CreateNotice{
+  cursor: pointer;
+  display: inline-block;
+  /* padding: .4rem; */
+}
+
+
+.CreateNotice::after {
+  content: '';
+  width: 0px;
+  height: 1px;
+  display: block;
+  background: #F3F4F6;
+  transition: 300ms;
+}
+
+.CreateNotice:hover::after {
+  width: 100%;
+}
+
+.CreateNotice:hover{
+  color: #E5E7EB;
+}
+
+.notice{
+  height: 40rem;
+  width: 100%;
+  /* background-color: orangered; */
+  border: 2px solid hotpink;
+}

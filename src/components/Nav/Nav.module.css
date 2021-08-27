@@ -1,0 +1,50 @@
+
+.nav{
+  background-color: #111827;
+  width: 100%;
+  color: #F9FAFB;
+  font-size: 3rem;
+  padding: 1rem 2rem;
+}
+
+.logo{
+  font-family: "Verdana", Geneva, Tahoma, sans-serif;
+}
+
+.nav ul{
+
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+}
+
+
+.CreateNotice{
+  cursor: pointer;
+  display: inline-block;
+  /* padding: .4rem; */
+}
+
+
+.CreateNotice::after {
+  content: '';
+  width: 0px;
+  height: 1px;
+  display: block;
+  background: #F3F4F6;
+  transition: 300ms;
+}
+
+.CreateNotice:hover::after {
+  width: 100%;
+}
+
+.CreateNotice:hover{
+  color: #E5E7EB;
+}
+
+
+ a, a:hover, a:focus, a:active {
+      text-decoration: none;
+      color: inherit;
+ }

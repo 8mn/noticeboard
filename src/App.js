@@ -3,7 +3,6 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom"
 import CreateNotice from './components/CreateNotice/CreateNotice';
 import Home from './components/Home/Home';

@@ -1,54 +1,52 @@
-
-.nav{
-  background-color: #312E81;
-  width: 100%;
-  color: #EEF2FF;
-  font-size: 2.5rem;
-  padding: 1rem 2rem;
-  position:sticky;
-  top: 0;
-  /* margin-bottom: 10rem; */
+.nav {
+	background-color: #312e81;
+	width: 100%;
+	color: #eef2ff;
+	font-size: 2.5rem;
+	padding: 1rem 2rem;
+	position: sticky;
+	top: 0;
+	/* margin-bottom: 10rem; */
 }
 
-.logo{
-  font-family: Verdana, Geneva, "Tahoma", sans-serif;
+.logo {
+	font-family: Verdana, Geneva, "Tahoma", sans-serif;
 }
 
-.nav ul{
-
-  display: flex;
-  list-style: none;
-  justify-content: space-between;
-  align-items: center;
+.nav ul {
+	display: flex;
+	list-style: none;
+	justify-content: space-between;
+	align-items: center;
 }
 
-
-.CreateNotice{
-  cursor: pointer;
-  display: inline-block;
-  /* padding: .4rem; */
+.CreateNotice {
+	cursor: pointer;
+	display: inline-block;
+	/* padding: .4rem; */
 }
-
 
 .CreateNotice::after {
-  content: '';
-  width: 0px;
-  height: 1px;
-  display: block;
-  background: #F3F4F6;
-  transition: 300ms;
+	content: "";
+	width: 0px;
+	height: 1px;
+	display: block;
+	background: #f3f4f6;
+	transition: 300ms;
 }
 
 .CreateNotice:hover::after {
-  width: 100%;
+	width: 100%;
 }
 
-.CreateNotice:hover{
-  color: #E5E7EB;
+.CreateNotice:hover {
+	color: #e5e7eb;
 }
 
-
- a, a:hover, a:focus, a:active {
-      text-decoration: none;
-      color: inherit;
- }
+a,
+a:hover,
+a:focus,
+a:active {
+	text-decoration: none;
+	color: inherit;
+}

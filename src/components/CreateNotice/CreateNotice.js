@@ -1,26 +1,27 @@
 import React from "react";
-import styles from "../CreateNotice/CreateNotice";
+import styles from "./CreateNotice.module.css";
 import Nav from "../Nav/Nav";
 
 function CreateNotice() {
 	return (
 		<div className={styles.container}>
-			<Nav />
-			<div className="container">
-				<form >
-					<div className="formField">
+			<Nav hide />
+			<div className={styles.formContainer}>
+				<form>
+					<div className={styles.formField}>
 						<label htmlFor="Title">Title</label>
-						<input type="text" placeholder="Title" />
+						<input type="text"/>
 					</div>
-					<div className="formFieled">
+					<div className={styles.formField}>
 						<label htmlFor="Title">Description</label>
-						<input type="text" placeholder="Description" />
+						<input type="text" />
 					</div>
 				</form>
 				<button
 					onClick={() => {
 						console.log("Hello");
 					}}
+					className={styles.publishBtn}
 				>
 					Publish
 				</button>

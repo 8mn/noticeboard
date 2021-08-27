@@ -65,11 +65,13 @@ html{
   width: 100%;
   /* background-color: orangered; */
   /* border: 2px solid hotpink; */
-  border-bottom: 2px solid #aec7ff;
+  /* border-bottom: 2px solid #aec7ff; */
+  border-bottom: 2px solid #818CF8;
   display: flex;
   flex-direction: column;
-  background-color: #F9FAFB;
+  background-color: #EEF2FF;
   padding:1rem;
+  color: #111827;
 }
 
 .noticeContent{

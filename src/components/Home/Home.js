@@ -47,13 +47,6 @@ function Home() {
 							</div>
 							<span className="noticeText">{notice.description}</span>
 						</div>
-						{/* <div className="reactions">
-							<FacebookSelector
-								iconSize={24}
-								onSelect={() => console.log()}
-								reactions={["like", "wow", "sad", "angry"]}
-							/>
-						</div> */}
 					</div>
 				))}
 			</div>

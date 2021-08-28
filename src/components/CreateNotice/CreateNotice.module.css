@@ -1,12 +1,12 @@
 
-
-
 .formContainer{
   height: 40vh;
   width: 40vw;
   margin: auto;
-  background-color: #EEF2FF;
+  /* background-color: #EEF2FF; */
+  background-color: #E0E7FF;
   font-size: 2rem;
+  padding: 1rem;
 }
 
 .formField{
@@ -16,6 +16,21 @@
 
 .formField input{
     font-size: 2rem;
+    padding: 5px 10px;
+    border: 2px solid #6366F1;
+    outline: none;
+    border-radius: 4px;
+}
+
+.textarea{
+    font-size: 2rem;
+    padding: 5px 10px;
+    height: 20rem;
+    resize: none;
+    font-family: "satoshi";
+    border: 2px solid #6366F1;
+    outline: none;
+    border-radius: 4px;
 }
 
 .publishBtn{
@@ -35,4 +50,13 @@
     background: #EEF2FF;
     color: #6366F1;
     border: 1px solid #6366F1;
+}
+
+.createdNotice{
+  height: max-content;
+  width: 40vw;
+  margin: auto;
+  background-color: #EEF2FF;
+  font-size: 2rem;
+  padding: 1rem;
 }

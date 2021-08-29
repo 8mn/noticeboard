@@ -60,3 +60,28 @@
   font-size: 2rem;
   padding: 1rem;
 }
+
+.tag{
+    font-size: 2rem;
+    border-top: 5px solid #6366F1;
+    padding: 1rem 0;
+}
+
+.notice{
+    border: 2px solid black;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.options{
+    display: flex;
+    padding: 1rem;
+    background-color: #A5B4FC;
+}
+.options button{
+    padding: 10px;
+    margin-right: 1rem;
+    cursor: pointer;
+}

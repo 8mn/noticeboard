@@ -2,7 +2,6 @@ import React, { useState,useEffect } from "react";
 import Nav from "../Nav/Nav";
 import "./Home.css";
 import { fetchNotice } from "../../api/index";
-import {useLocation} from "react-router-dom"
 
 
 

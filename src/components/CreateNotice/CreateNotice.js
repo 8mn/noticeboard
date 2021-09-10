@@ -46,11 +46,32 @@ function CreateNotice() {
 			alert("Title cant be empty");
 		} else {
 			console.log(id);
-			createNotice(Notice);
+			createNotice(Notice)
+			.then(res => console.log(res))
+			.catch(err => console.log(err))
 			setNoticelist([...noticelist,Notice])
+			console.log(noticelist)
 		}
+		// setNotice({
+		// 	title: "",
+		// 	description: "",
+		// 	creator: "Principal",
+		// 	tags: [],
+		// });
 	};
 
+
+	const handleDelete = (id) => {
+		deleteNotice(id)
+		.then(res => console.log(res))
+		.catch(err => console.log(err))
+
+		// console.log(noticelist)
+		// const afterRemoved = noticelist.filter(notice => notice._id === id)
+		// // setNoticelist(afterRemoved)
+		// console.log(afterRemoved)
+	}
+ 
 	return (
 		<div className={styles.container} id="PublishNotice">
 			<Nav hide />
@@ -91,12 +112,13 @@ function CreateNotice() {
 					<div className={styles.notice} key={notice._id}>
 						<div className={styles.options}>
 							<button
-								onClick={() => {
-									deleteNotice(notice._id);
+								onClick={(id) => {
+									handleDelete(notice._id)
+									
 									// setNoticelist(noticelist.filter(n => n.id === notice._id))
 								}}
 							>
-								DELETE
+								Delete
 							</button>
 							<button
 								onClick={() => {

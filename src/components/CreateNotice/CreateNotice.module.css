@@ -68,11 +68,12 @@
 }
 
 .notice{
-    border: 2px solid black;
+    border: 2px solid #6366F1;
     border-radius: 4px;
     margin-bottom: 1rem;
     display: flex;
     flex-direction: column;
+    /* background-color: #EEF2FF; */
 }
 
 .options{
@@ -84,4 +85,14 @@
     padding: 10px;
     margin-right: 1rem;
     cursor: pointer;
+}
+
+.republish{
+      height: 40vh;
+  width: 40vw;
+  margin: auto;
+  /* background-color: #EEF2FF; */
+  background-color: rgb(255, 218, 230);
+  font-size: 2rem;
+  padding: 1rem;
 }

@@ -9,7 +9,9 @@ import {
 } from "../../api/index";
 
 //two problems
-//1. update below posts after creating new notice or updating a new notice
+//1. fetch the notice when
+//a. someone publishes/republishes a notice
+//b. deletes a notice
 
 function CreateNotice() {
 	const [noticelist, setNoticelist] = useState([]);
@@ -21,17 +23,20 @@ function CreateNotice() {
 		tags: [],
 	});
 
-	useEffect(() => {
-		async function getNotice() {
-			try {
-				const { data } = await fetchNotice;
-				setNoticelist(data);
-			} catch (error) {
-				console.log(error);
-			}
+
+	
+
+	async function getNotice() {
+		try {
+			const { data } = await fetchNotice;
+			setNoticelist(data);
+		} catch (error) {
+			console.log(error);
 		}
+	}
+	useEffect(() => {
 		getNotice();
-	}, []);
+	}, [])
 
 	const makeNewNotice = () => {
 		if (id) {
@@ -40,18 +45,19 @@ function CreateNotice() {
 		} else if (!Notice.title) {
 			alert("Title cant be empty");
 		} else {
-			console.log(Notice);
+			console.log(id);
 			createNotice(Notice);
+			setNoticelist([...noticelist,Notice])
 		}
 	};
 
 	return (
-		<div className={styles.container}>
+		<div className={styles.container} id="PublishNotice">
 			<Nav hide />
-			<div className={styles.formContainer}>
+			<div className={!id ? `${styles.formContainer}` : `${styles.republish}`}>
 				<form>
 					<div className={styles.formField}>
-						<label htmlFor="Title">Title</label>
+						<label htmlFor="Title">{!id ? "Title" : "New Title"}</label>
 						<input
 							type="text"
 							value={Notice.title ? Notice.title : ""}
@@ -59,7 +65,7 @@ function CreateNotice() {
 						/>
 					</div>
 					<div className={`${styles.formField} ${styles.description}`}>
-						<label htmlFor="Title">Description</label>
+						<label htmlFor="Title">{!id ? "Description" : "New Description"}</label>
 						<textarea
 							className={styles.textarea}
 							value={Notice.description ? Notice.description : ""}
@@ -76,6 +82,7 @@ function CreateNotice() {
 					className={styles.publishBtn}
 				>
 					{id ? "Re-Publish" : "Publish"}
+					{/* Publish */}
 				</button>
 			</div>
 			<div className={styles.createdNotice}>
@@ -83,7 +90,14 @@ function CreateNotice() {
 				{noticelist.map((notice) => (
 					<div className={styles.notice} key={notice._id}>
 						<div className={styles.options}>
-							<button onClick={() => deleteNotice(notice._id)}>DELETE</button>
+							<button
+								onClick={() => {
+									deleteNotice(notice._id);
+									// setNoticelist(noticelist.filter(n => n.id === notice._id))
+								}}
+							>
+								DELETE
+							</button>
 							<button
 								onClick={() => {
 									console.log(notice._id);
@@ -91,7 +105,8 @@ function CreateNotice() {
 									setNotice(notice);
 								}}
 							>
-								UPDATE
+								{/* {id? "Re-publish":"Update"} */}
+								<a href="#PublishNotice">Update</a>
 							</button>
 						</div>
 						<div className="noticeContent">

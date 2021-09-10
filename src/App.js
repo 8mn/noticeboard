@@ -12,7 +12,7 @@ function App() {
 		<Router>
 			<Switch>
 				<Route exact path="/" component={Home} />
-				<Route exact path="/create-notice" component={CreateNotice} />
+				<Route exact path="/dashboard" component={CreateNotice} />
 			</Switch>
 		</Router>
 	);

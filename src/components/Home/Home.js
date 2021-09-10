@@ -1,42 +1,34 @@
-import React, { useState } from "react";
-import { useEffect } from "react";
+import React, { useState,useEffect } from "react";
 import Nav from "../Nav/Nav";
 import "./Home.css";
 import { fetchNotice } from "../../api/index";
+import {useLocation} from "react-router-dom"
 
 
 
 function Home() {
-	// const [notice,setNotice] = useState({
-	// 	notice:{
-	// 		title:"",
-	// 		description:"",
-	// 		creator:"",
-	// 		createdAt:"",
-	// 		tags:[]
-	// 	}
-	// })
+
 
 	const [noticelist, setNoticelist] = useState([]);
+	async function getNotice() {
+		try {
+			const { data } = await fetchNotice;
+			setNoticelist(data);
+		} catch (error) {
+			console.log(error);
+		}
+	}
 
 	useEffect(() => {
-		async function getNotice() {
-			try {
-				const { data } = await fetchNotice;
-				setNoticelist(data);
-			} catch (error) {
-				console.log(error);
-			}
-		}
 		getNotice();
-	}, []);
+	},[]);
 
 	return (
 		<div className="App">
 			<Nav />
-			<p className="org">MES COLLEGE OF ENGINEERING</p>
+			<p className="org">SOME COLLEGE NAME</p>
 			<div className="noticeBoard">
-				{noticelist.map((notice) => (
+				{noticelist.length? noticelist.map((notice) => (
 					<div className="notice" key={notice._id}>
 						{console.log(noticelist)}
 						<div className="noticeContent">
@@ -48,7 +40,7 @@ function Home() {
 							<span className="noticeText">{notice.description}</span>
 						</div>
 					</div>
-				))}
+				)):<div className="emptyState">No new notices today!</div>}
 			</div>
 		</div>
 	);

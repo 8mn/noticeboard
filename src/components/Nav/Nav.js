@@ -9,9 +9,9 @@ function Nav({hide}) {
 				<Link to="/">
 					<li className={styles.logo}>NOTICEBOARD</li>
 				</Link>
-				<Link to="/create-notice">
+				<Link to="/dashboard">
 					<li className={styles.CreateNotice}>
-						{hide ? "" : "Create a Notice"}
+						{hide ? "" : "Dashboard"}
 					</li>
 				</Link>
 			</ul>

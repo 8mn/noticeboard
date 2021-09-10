@@ -39,6 +39,7 @@ html{
   display: flex;
   font-family: 'Poppins', sans-serif;
   /* background-color: #F9FAFB; */
+  /* background-color: #000dff1c; */
 }
 
 
@@ -104,4 +105,14 @@ html{
 .reactions{
   /* border: 2px solid black; */
   width: max-content;
+}
+
+.emptyState{
+  font-size: 10vw;
+  line-height: 1;
+  margin: auto;
+  text-align: center;
+  border: 2px solid #818CF8;
+  color: #312e81;
+  padding: 1rem;
 }

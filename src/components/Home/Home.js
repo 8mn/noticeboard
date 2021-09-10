@@ -2,11 +2,12 @@ import React, { useState,useEffect } from "react";
 import Nav from "../Nav/Nav";
 import "./Home.css";
 import { fetchNotice } from "../../api/index";
-
+import {useLocation} from "react-router-dom"
 
 
 function Home() {
 
+	const location = useLocation();
 
 	const [noticelist, setNoticelist] = useState([]);
 	async function getNotice() {
@@ -20,7 +21,8 @@ function Home() {
 
 	useEffect(() => {
 		getNotice();
-	},[]);
+		console.log(location);
+	},[location]);
 
 	return (
 		<div className="App">

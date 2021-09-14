@@ -25,7 +25,7 @@ function Home() {
 	return (
 		<div className="App">
 			<Nav />
-			<p className="org">SOME COLLEGE NAME</p>
+			<p className="org">COLLEGE NAME</p>
 			<div className="noticeBoard">
 				{noticelist.length? noticelist.map((notice) => (
 					<div className="notice" key={notice._id}>

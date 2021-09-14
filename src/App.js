@@ -18,8 +18,5 @@ function App() {
 	);
 }
 
-// todo
-//create a notice page
-//rest api
 
 export default App;

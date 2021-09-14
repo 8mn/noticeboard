@@ -41,35 +41,27 @@ function CreateNotice() {
 	const makeNewNotice = () => {
 		if (id) {
 			console.log(Notice);
-			updateNotice(id, Notice);
+			updateNotice(id, Notice)
+			.then(res => console.log(res));
 		} else if (!Notice.title) {
 			alert("Title cant be empty");
 		} else {
 			console.log(id);
 			createNotice(Notice)
-			.then(res => console.log(res))
-			.catch(err => console.log(err))
-			setNoticelist([...noticelist,Notice])
-			console.log(noticelist)
+				.then((res) => setNoticelist([...noticelist, res.data]))
+				.catch((err) => console.log(err));
 		}
-		// setNotice({
-		// 	title: "",
-		// 	description: "",
-		// 	creator: "Principal",
-		// 	tags: [],
-		// });
 	};
 
+	let afterRemoved; 
 
 	const handleDelete = (id) => {
 		deleteNotice(id)
-		.then(res => console.log(res))
-		.catch(err => console.log(err))
-
-		// console.log(noticelist)
-		// const afterRemoved = noticelist.filter(notice => notice._id === id)
-		// // setNoticelist(afterRemoved)
-		// console.log(afterRemoved)
+			.then(() => {
+				afterRemoved = noticelist.filter((notice) => notice._id !== id);
+				setNoticelist(afterRemoved);
+			})
+			.catch((err) => console.log(err));
 	}
  
 	return (
@@ -114,8 +106,6 @@ function CreateNotice() {
 							<button
 								onClick={(id) => {
 									handleDelete(notice._id)
-									
-									// setNoticelist(noticelist.filter(n => n.id === notice._id))
 								}}
 							>
 								Delete
